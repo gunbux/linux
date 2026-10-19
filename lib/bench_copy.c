@@ -12,3 +12,4 @@ size_t bench_copy(char *dst, const char *src, size_t n)
 	dst[i] = 0;
 	return i;
 }
+/* m3-validate follow-up 2026-10-19T19:13:53Z */
