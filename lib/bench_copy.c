@@ -13,3 +13,13 @@ size_t bench_copy(char *dst, const char *src, size_t n)
 	return i;
 }
 /* m3-validate follow-up 2026-10-19T19:13:53Z */
+
+/* Returns a copy of src that the caller frees with kfree(). */
+char *bench_dup(const char *src)
+{
+	size_t n = strlen(src);
+	char *p = kmalloc(n, GFP_KERNEL);
+
+	memcpy(p, src, n + 1);
+	return p;
+}
